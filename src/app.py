@@ -13,6 +13,7 @@ from api.analytics import analytics_bp
 from api.transform import transform_bp
 from api.image_proxy import image_proxy_bp
 from api.health import health_bp
+from api.snapshots import snapshots_bp
 
 app = Flask(__name__)
 app.register_blueprint(webhooks_bp)
@@ -22,6 +23,7 @@ app.register_blueprint(analytics_bp)
 app.register_blueprint(transform_bp)
 app.register_blueprint(image_proxy_bp)
 app.register_blueprint(health_bp)
+app.register_blueprint(snapshots_bp)
 
 
 @app.route("/api/users/<int:user_id>", methods=["GET"])
